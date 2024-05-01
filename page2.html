@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="icon.png">
+    <title>Music</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: black;
+        }
+
+        @font-face {
+            font-family: myFirstFont;
+            src: url('Gotham Bold/Gotham Bold.otf');
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            padding-top: 60px;
+            transition: 0.5s;
+        }
+
+        .sidebar a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            color: #f1f1f1;
+        }
+
+        .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #111;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+        }
+
+        .openbtn:hover {
+            background-color: #444;
+        }
+
+        #main {
+            transition: margin-left .5s;
+            padding: 20px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidebar {padding-top: 15px;}
+            .sidebar a {font-size: 18px;}
+        }
+
+        #title {
+            color:white;
+            font-family: myFirstFont;
+            font-size: 3em;
+            text-align: center;
+        }
+
+        .button-container {
+            display: flex;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;           
+            color: white;
+            width:70%;
+            margin-left:15%; /* Adjust the margin-left to move the container to the right */
+            transition: opacity 0.3s;
+        }
+
+        .button-container:hover {
+            opacity: 0.8; /* Adjust the opacity value to your liking */
+        }
+
+        .button-container img {
+            margin-right: 15px;
+        }
+
+        .button-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .button-content h3 {
+            margin: 0;
+            font-size: 2.5em;
+            font-family: myFirstFont;
+        }
+
+        @media screen and (max-width:670px) {
+            .button-container h3 {
+                font-size:1.5em;
+            }
+        }
+            
+
+        .button-content p {
+            font-size: 1em;
+            font-family: sans-serif;
+            margin:0;
+            margin-top:3px;
+        }
+
+        .content-container {
+            display: none; /* Initially hide the content */
+            background-color: black;
+            padding: 20px;
+            margin: 10px;
+            margin-left:15%; /* Adjust the margin-left to move the container to the right */
+            display: flex; /* Align iframes horizontally */
+        }
+
+        .content-container iframe {
+            margin-left: 15px; /* Adjust the margin between iframes */
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div style="background-color: black;position: fixed;z-index: 100;">
+        <div id="mySidebar" class="sidebar">
+            <a href="index.html">HOME</a>
+            <a href="index.html#bgimage1">INFO</a>
+            <a href="index.html#videos">VIDEOS</a>
+            <a href="index.html#music">MUSIC</a>
+        </div>
+        <div id="main" style="margin-left: 0;">
+            <button class="openbtn" onclick="toggleNav()" style="position: absolute;">&#9776;</button>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <h2 id="title">ALBUMS</h2>
+    
+    <!--//-->
+    
+    <div class="button-container" onclick="toggleContent(this)">
+        <img src="iloveyou.jpg" width="130" height="130" alt="I Love You. album cover">
+        <div class="button-content">
+            <h3>I Love You.</h3>
+            <p>2013</p>
+        </div>
+    </div>
+    <div class="content-container" style="display: none;"> <!-- Initially hide the content -->
+        <iframe src="https://open.spotify.com/embed/album/4xkM0BwLM9H2IUcbYzpcBI" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="380" style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/album/i-love-you/635016635"></iframe>
+        
+    </div>
+    
+    <!--//-->
+    
+    <div class="button-container" onclick="toggleContent(this)">
+        <img src="00FF.webp" width="130" height="130" alt="#000000 & #FFFFFF album cover">
+        <div class="button-content">
+            <h3>#000000 & #FFFFFF</h3>
+            <p>2014</p>
+        </div>
+    </div>
+    <div class="content-container" style="display: none;"> <!-- Initially hide the content -->
+        <iframe src="https://open.spotify.com/embed/album/2mKqHATk7WVbtazVkSe9w0" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="380" style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/album/000000-ffffff-no-dj-version/1316105951"></iframe>
+    </div>
+    
+    <!--//-->
+    
+    <div class="button-container" onclick="toggleContent(this)">
+        <img src="wipedout.jpg" width="130" height="130" alt="Wiped Out! album cover">
+        <div class="button-content">
+            <h3>Wiped Out!</h3>
+            <p>2015</p>
+        </div>
+    </div>
+    <div class="content-container" style="display: none;"> <!-- Initially hide the content -->
+        <iframe src="https://open.spotify.com/embed/album/18iFxjZugvKhuNNMbLjZJF" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="380" style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/album/wiped-out/1030115907"></iframe>
+    </div>
+    
+    <!--//-->
+    
+    <div class="button-container" onclick="toggleContent(this)">
+        <img src="hardtoimagine.jpg" width="130" height="130" alt="Hard to Imagine The Neighbourhood Ever Changing album cover">
+        <div class="button-content">
+            <h3>Hard to Imagine The Neighbourhood Ever Changing</h3>
+            <p>2018</p>
+        </div>
+    </div>
+    <div class="content-container" style="display: none;"> <!-- Initially hide the content -->
+        <iframe src="https://open.spotify.com/embed/album/0ODLCdHBFVvKwJGeSfd1jy" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="380" style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/album/hard-to-imagine-the-neighbourhood-ever-changing/1440532502"></iframe>
+    </div>
+    
+    <!--//-->
+    
+    <div class="button-container" onclick="toggleContent(this)">
+        <img src="chipchrome.jpg" width="130" height="130" alt="Chip Chrome & the Mono-Tones album cover">
+        <div class="button-content">
+            <h3>Chip Chrome & the Mono-Tones</h3>
+            <p>2020</p>
+        </div>
+    </div>
+    <div class="content-container" style="display: none;"> <!-- Initially hide the content -->
+        <iframe src="https://open.spotify.com/embed/album/4uNgt1uQs6wZRm4giB3shX" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="380" style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/nz/album/chip-chrome-the-mono-tones/1525010103"></iframe>
+    </div>
+    <br>
+    <br>
+
+    <script>
+        function toggleNav() {
+            var sidebar = document.getElementById("mySidebar");
+            var main = document.getElementById("main");
+
+            if (sidebar.style.width === "250px") {
+                sidebar.style.width = "0";
+                main.style.marginLeft = "0";
+            } else {
+                sidebar.style.width = "250px";
+                main.style.marginLeft = "250px";
+            }
+        }
+
+        function toggleContent(button) {
+            var content = button.nextElementSibling;
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'flex';
+            } else {
+                content.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
